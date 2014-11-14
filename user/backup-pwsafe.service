@@ -1,0 +1,8 @@
+[Unit]
+Description=Backup pwsafe file to prevent syncthing disaster
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/logger $HOME "/usr/bin/cp $HOME/.pwsafe/db.psafe3 $HOME/.db.psafe3.bak"
+ExecStart=/usr/bin/bash -c '/usr/bin/cp $HOME/.pwsafe/db.psafe3 $HOME/.db.psafe3.bak'
+RemainAfterExit=yes

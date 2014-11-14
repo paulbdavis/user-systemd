@@ -1,0 +1,8 @@
+[Unit]
+Description=LinConnect Server
+
+[Service]
+ExecStart=/usr/bin/linconnect-server
+
+[Install]
+WantedBy=default.target
