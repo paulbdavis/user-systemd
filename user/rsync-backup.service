@@ -3,4 +3,4 @@ Description=Backup home to backup drive
 
 [Service]
 Type=oneshot
-ExecStart=/home/%u/bin/rsync-backup
+ExecStart=/usr/bin/bash %h/bin/rsync-backup
