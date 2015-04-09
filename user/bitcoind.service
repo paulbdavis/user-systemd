@@ -1,0 +1,10 @@
+[Unit]
+Description=Bitcoin Daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/bitcoind
+Restart=always
+
+[Install]
+WantedBy=default.target
