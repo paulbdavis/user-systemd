@@ -5,10 +5,9 @@ IgnoreOnIsolate=true
 [Service]
 Type=forking
 Environment=GPG_TTY=
-ExecStartPre=/usr/bin/gpgconf --launch dirmngr
+ExecStartPre=/usr/bin/gpgconf --kill gpg-agent
 ExecStart=/usr/bin/gpg-agent --daemon --enable-ssh-support --use-standard-socket
 ExecStop=/usr/bin/gpgconf --kill gpg-agent
-ExecStop=/usr/bin/gpgconf --kill dirmngr
 Restart=on-abort
 
 [Install]
