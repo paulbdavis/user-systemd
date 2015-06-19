@@ -1,0 +1,8 @@
+[Unit]
+Description=Set a random wallpaper
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/find %h/pictures/wallpaper -name "*jpg" -fprint /tmp/%u-wallpapers
+ExecStart=/usr/bin/bash -c "%h/.config/i3/bin/wallpaper $(sed -n $(($RANDOM % $(wc -l /tmp/%u-wallpapers | awk '{print $1}') + 1))p /tmp/%u-wallpapers)"
+RemainAfterExit=no

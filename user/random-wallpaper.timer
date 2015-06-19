@@ -1,0 +1,9 @@
+[Unit]
+Description=Run random wallpaper setter every so often
+
+[Timer]
+OnActiveSec=5min
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target
