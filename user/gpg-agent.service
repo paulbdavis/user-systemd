@@ -4,9 +4,8 @@ IgnoreOnIsolate=true
 
 [Service]
 Type=forking
-Environment=GPG_TTY=
 ExecStartPre=/usr/bin/gpgconf --kill gpg-agent
-ExecStart=/usr/bin/gpg-agent --daemon --enable-ssh-support --use-standard-socket
+ExecStart=/usr/bin/gpg-agent --daemon --enable-ssh-support --log-file %h/.gnupg/agent.log
 ExecStop=/usr/bin/gpgconf --kill gpg-agent
 Restart=on-abort
 
